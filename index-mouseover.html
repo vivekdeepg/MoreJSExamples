@@ -1,0 +1,44 @@
+<!doctype html>
+  <html lang="en">
+    <meta charset="utf-8">
+    <head> <title> Blur Game </title>
+      <style>
+        .body {
+          margin: 20px;
+        }
+        .img {
+          margin: 20px;
+        }
+      </style>
+    </head>
+    
+    <body>
+      <img id="zero" src="zeroblur.jpg">
+      <img id="one" src="oneblur.jpg">
+      <img id="two" src="twoblur.jpg">
+      <img id="three" src="threeblur.jpg">
+      <img id="four" src="fourblur.jpg">
+      <img id="five" src="fiveblur.jpg">
+      <script>
+        window.onload = init;
+        function init() {
+          var images = document.getElementsByTagName("img");
+          for (var i=0; i<images.length; i++) {
+            images[i].onmouseover = showAnswer;
+            images[i].onmouseout = reblur;
+          }
+        }
+        function showAnswer(eventObject) {
+          var img = eventObject.target;
+          var name = img.id + ".jpg";
+          img.src = name;
+        }
+        function reblur(eventObject) {
+          var image = eventObject.target
+          var name = image.id + "blur.jpg";
+          image.src = name;
+        }
+      </script>
+    </body>
+  </html>
+

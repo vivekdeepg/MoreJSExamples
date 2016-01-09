@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <meta charset="utf-8">
+  <head>
+    <title> Cola Sorter </title>
+  </head>
+
+  <body>
+    <script>
+      function makeCounter() {
+        var count = 3;
+        return function() {
+          count++;
+          return count;
+        };
+      }
+      var doCount = makeCounter();
+      console.log(doCount());
+      console.log(doCount());
+      console.log(doCount());
+      
+      function makePassword(password) {
+        return function (passwordGuess) {
+          return (passwordGuess === password);
+        };
+      }
+      
+      var guessPassword = makePassword("vivek");
+      console.log(guessPassword("vivek"));
+      console.log(guessPassword("harry"));
+
+      function multN(n) {
+        return function (num) {
+         return n*num;
+        };
+      }
+
+      var multiplier = multN(20);
+      console.log(multiplier(30));
+ 
+    </script>
+  </body>
+</html>
+        
+
